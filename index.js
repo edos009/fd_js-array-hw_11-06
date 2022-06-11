@@ -104,3 +104,84 @@ const object = {
 
 console.log(Object.keys(object));
 */
+
+// Задания с функциями
+
+// 1. Необходимо создать функцию hasElem, которая параметрами будет принимать массив и строку, и возвращать true, если строка есть в массиве, и false - если нет.
+//fisrt way
+/*
+const arr = ['a', 'b', 'c', 'd'];
+
+const hasElem = function (arr, string) {
+  if (arr.indexOf(string) !== -1) {
+    return true;
+  }
+  return false;
+};
+
+console.log(hasElem(arr, 'c'));
+*/
+
+//second way
+/*
+const arr = ["a", "b", "c", "d"];
+
+const hasElem = function (arr, string) {
+  return arr.includes(string);
+};
+
+console.log(hasElem(arr, "c"));
+*/
+
+// 2. Дан массив с числами. Проверьте, что в этом массиве есть указанное число. Если есть - вернуть true, а если нет - вернуть false.
+/*
+const arr = [1,2,3,4,5,6,7,8,9,10];
+
+const hasNumber = function (arr, num) {
+  return arr.includes(num);
+};
+
+console.log(hasNumber(arr, 7));
+*/
+
+// 3. Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть -  вернуть true  [2,2,1], а если нет - вернуть false [1,2,1].
+/*
+const arr = [1, 2, 2];
+
+const hasSameNumberSideBySide = function (arr) {
+  return arr.some(function (elem, i, arr) {
+    return i !== 0 && elem === arr[i - 1];
+  });
+};
+
+console.log(hasSameNumberSideBySide(arr));
+*/
+
+// 4. Функция, которая возвращает массив заполненный 10 случайными числами в интервале от 5 до 33. Math.random()
+/*
+function getRandomArray(min, max, amount) {
+  let arr = [];
+  for (let i = 0; i < amount; i++) {
+    arr.push(Math.round(Math.random() * (max - min) + min));
+    
+  }
+  return arr;
+}
+
+console.log(getRandomArray(5, 33, 10));
+*/
+
+// 5. Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
+/*
+const arr = [12, 15, 20, 25, 59, 79];
+
+const getArithmeticalMeanArray = function (arr) {
+  return (
+    arr.reduce(function (previousValue, currentValue) {
+      return previousValue + currentValue;
+    }) / arr.length
+  );
+};
+
+console.log(getArithmeticalMeanArray(arr));
+*/
